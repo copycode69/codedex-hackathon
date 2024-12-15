@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NASA - Exploring the Final Frontier (1996)</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Press Start 2P", cursive, Arial, sans-serif; /* Retro pixelated font */
+            background-image:url('/public/images/bg.gif');
+            background-size: cover;
+            background-position: center;
+            overflow-x: hidden;
+        }
+        a {
+            color: cyan;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: lime;
+        }
+
+        /* Header and Marquee */
+        .header {
+            text-align: center;
+            font-size: 36px;
+            color: yellow;
+            text-shadow: 0px 0px 8px gold, 0px 0px 15px red; /* Retro glow effect */
+        }
+        .marquee {
+            background-color: #222;
+            padding: 10px;
+            border: 2px dashed gold;
+            font-size: 18px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: #333;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+        .nav-bar a {
+            margin: 0 15px;
+            text-transform: uppercase;
+        }
+
+        /* Content Section */
+        .content {
+            margin: 20px;
+            padding: 15px;
+            border: 3px solid white;
+            background-color: rgba(17, 17, 17, 0.8);
+            box-shadow: 0 0 10px lime;
+        }
+        .divider {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .divider img {
+            width: 300px;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #222;
+            color: lime;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+            border-top: 2px dashed yellow;
+            font-family: "Comic Sans MS", sans-serif;
+        }
+        .footer img {
+            width: 50px;
+            vertical-align: middle;
+        }
+
+        /* Animation Effects */
+        .stars {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .rocket {
+            position: absolute;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: launch 8s infinite linear;
+        }
+        @keyframes launch {
+            0% { bottom: -200px; }
+            50% { bottom: 50%; transform: translateX(-50%) rotate(15deg); }
+            100% { bottom: 100vh; }
+        }
+
+        .planet {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            animation: orbit 10s infinite linear;
+        }
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translate(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translate(50px) rotate(-360deg); }
+        }
+
+        /* Retro animation for planet and rocket */
+        @keyframes fadein {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Additional Styling */
+        .mission-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .mission-list li {
+            background-color: #444;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px cyan;
+        }
+
+        .trivia {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 0 5px lime;
+        }
+        .trivia button {
+            background-color: #444;
+            color: cyan;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .trivia button:hover {
+            background-color: lime;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <marquee behavior="scroll" direction="left" class="marquee">🚀 Welcome to NASA - Exploring the Final Frontier! 🌌</marquee>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="index.html">🌍 Home</a>
+        | <a href="Missions.html">🚀 Missions</a>
+        | <a href="news.html">📰 News</a>
+        | <a href="Gallery.html">📸 Gallery</a>
+        | <a href="contact.html">📞 Contact</a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2 class="blinking">🌟 Latest Mission: Mars Pathfinder 🌟</h2>
+        <p><strong>Date:</strong> December 4, 1996</p>
+        <p>NASA's Mars Pathfinder mission is scheduled to launch tomorrow. This groundbreaking mission will bring us closer to exploring the red planet. Stay tuned for updates!</p>
+        
+        <div class="divider">
+            <img src="/public/images/earth.gif" alt="Rocket Divider">
+        </div>
+        
+        <h3>🚀 Upcoming Missions</h3>
+        <ul class="mission-list">
+            <li><strong>Hubble Space Telescope:</strong> Continuing to observe distant galaxies and stars since 1990.</li>
+            <li><strong>International Space Station (ISS):</strong> A collaboration of NASA and international space agencies, continuously inhabited by astronauts.</li>
+            <li><strong>Mars 2020:</strong> A mission to send a rover to Mars with advanced technology to search for signs of past life.</li>
+        </ul>
+
+        <div class="divider">
+            <img src="/public/images/rocket.gif" alt="Rocket Divider">
+        </div>
+
+        <h3>🌌 Space Facts</h3>
+        <p>Did you know? The largest volcano in the solar system, Olympus Mons, is located on Mars, and it's three times taller than Mount Everest!</p>
+        <p>Another fascinating fact: Space is completely silent, as there is no air to carry sound waves!</p>
+
+        <div class="trivia">
+            <h3>🧩 Space Trivia Quiz</h3>
+            <p>Test your knowledge about space!</p>
+            <button onclick="alert('Correct! The largest planet in our solar system is Jupiter.')">What is the largest planet in our solar system?</button>
+            <button onclick="alert('Correct! The first human to walk on the moon was Neil Armstrong.')">Who was the first human to walk on the moon?</button>
+        </div>
+
+        <p>Did you know? NASA has over 30 active missions exploring the universe, from our home planet to galaxies far, far away.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 1996 NASA - Exploring Beyond the Stars 🌟</p>
+        <p>Designed by <a href="https://jaytiwari.in" target="_blank">jaytiwari.in</a></p>
+        <script>
+            document.getElementById("counter").innerText = Math.floor(Math.random() * 99999) + 1;
+        </script>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA Logo">
+    </div>
+
+    <!-- Stars -->
+    <div class="stars" style="top: 20%; left: 30%;"></div>
+    <div class="stars" style="top: 50%; left: 70%;"></div>
+    <div class="stars" style="top: 80%; left: 40%;"></div>
+
+    <!-- Rocket Animation -->
+    <div class="rocket">
+        <img src="/public/images/rocket.webp" alt="Rocket" style="width: 100px;">
+    </div>
+
+    <!-- Retro Orbiting Planet -->
+    <img class="planet retro-planet" src="/public/images/moon.webp" alt="Orbiting Planet">
+</body>
+</html>
