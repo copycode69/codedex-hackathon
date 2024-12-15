@@ -12,12 +12,8 @@
     ],
     "routes": [
       {
-        "src": "/pages/(.*)",
+        "src": "/(.*)",
         "dest": "/pages/$1"
-      },
-      {
-        "src": "/public/(.*)",
-        "dest": "/public/$1"
       }
     ]
   }
