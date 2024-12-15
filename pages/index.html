@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA - Exploring the Final Frontier (1996)</title>
     <style>
         /* General Styling */
@@ -8,10 +10,11 @@
             background-color: black;
             color: white;
             font-family: "Press Start 2P", cursive, Arial, sans-serif; /* Retro pixelated font */
-            background-image:url('/public/images/bg.gif');
+            background-image: url('/public/images/bg.gif');
             background-size: cover;
             background-position: center;
             overflow-x: hidden;
+            position: relative;
         }
         a {
             color: cyan;
@@ -98,8 +101,8 @@
 
         .rocket {
             position: absolute;
-            bottom: -200px;
-            left: 50%;
+            bottom: 0px;
+            left: 10%;
             transform: translateX(-50%);
             animation: launch 8s infinite linear;
         }
@@ -119,6 +122,51 @@
         @keyframes orbit {
             0% { transform: rotate(0deg) translate(50px) rotate(0deg); }
             100% { transform: rotate(360deg) translate(50px) rotate(-360deg); }
+        }
+
+        /* Pulsating stars */
+        .pulsating-star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: pulsate 1s infinite ease-in-out;
+        }
+        @keyframes pulsate {
+            0%, 100% { opacity: 0.5; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Meteor shower */
+        .meteor {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: linear-gradient(45deg, white, yellow);
+            border-radius: 50%;
+            animation: meteorShower 2s infinite linear;
+        }
+        @keyframes meteorShower {
+            0% { top: -10%; left: 10%; opacity: 1; }
+            100% { top: 100%; left: 90%; opacity: 0; }
+        }
+
+        /* Space Station rotating animation */
+        .space-station {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            background: url('/public/images/space-station.png') no-repeat center center;
+            background-size: contain;
+            border-radius: 50%;
+            animation: rotateSpaceStation 10s infinite linear;
+        }
+        @keyframes rotateSpaceStation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Retro animation for planet and rocket */
@@ -175,6 +223,19 @@
             background-color: lime;
             color: black;
         }
+
+        /* Enhanced Content Styling */
+        .upcoming-events {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 0 5px lime;
+        }
+
+        .upcoming-events h3 {
+            color: cyan;
+        }
     </style>
 </head>
 <body>
@@ -197,16 +258,17 @@
         <h2 class="blinking">🌟 Latest Mission: Mars Pathfinder 🌟</h2>
         <p><strong>Date:</strong> December 4, 1996</p>
         <p>NASA's Mars Pathfinder mission is scheduled to launch tomorrow. This groundbreaking mission will bring us closer to exploring the red planet. Stay tuned for updates!</p>
-        
+
         <div class="divider">
             <img src="/public/images/earth.gif" alt="Rocket Divider">
         </div>
-        
+
         <h3>🚀 Upcoming Missions</h3>
         <ul class="mission-list">
             <li><strong>Hubble Space Telescope:</strong> Continuing to observe distant galaxies and stars since 1990.</li>
             <li><strong>International Space Station (ISS):</strong> A collaboration of NASA and international space agencies, continuously inhabited by astronauts.</li>
             <li><strong>Mars 2020:</strong> A mission to send a rover to Mars with advanced technology to search for signs of past life.</li>
+            <li><strong>James Webb Space Telescope:</strong> Set to launch to reveal the earliest galaxies, black holes, and distant stars.</li>
         </ul>
 
         <div class="divider">
@@ -222,6 +284,14 @@
             <p>Test your knowledge about space!</p>
             <button onclick="alert('Correct! The largest planet in our solar system is Jupiter.')">What is the largest planet in our solar system?</button>
             <button onclick="alert('Correct! The first human to walk on the moon was Neil Armstrong.')">Who was the first human to walk on the moon?</button>
+        </div>
+
+        <div class="upcoming-events">
+            <h3>🔭 Upcoming Events</h3>
+            <ul class="mission-list">
+                <li><strong>Launch of Artemis I:</strong> NASA's mission to the Moon, planned for 2022.</li>
+                <li><strong>Return of the Mars Sample Return Mission:</strong> An exciting collaboration between NASA and ESA to bring samples from Mars to Earth.</li>
+            </ul>
         </div>
 
         <p>Did you know? NASA has over 30 active missions exploring the universe, from our home planet to galaxies far, far away.</p>
@@ -242,17 +312,22 @@
     <div class="stars" style="top: 50%; left: 70%;"></div>
     <div class="stars" style="top: 80%; left: 40%;"></div>
 
-    <!-- Falling Stars -->
-    <div class="falling-star" style="top: 10%; left: 20%;"></div>
-    <div class="falling-star" style="top: 25%; left: 50%;"></div>
-    <div class="falling-star" style="top: 40%; left: 75%;"></div>
+    <!-- Pulsating stars -->
+    <div class="pulsating-star" style="top: 10%; left: 20%;"></div>
+    <div class="pulsating-star" style="top: 40%; left: 80%;"></div>
+    <div class="pulsating-star" style="top: 70%; left: 60%;"></div>
 
-    <!-- Rocket Animation -->
+    <!-- Space Station -->
+    <div class="space-station"></div>
+
+    <!-- Meteor Shower -->
+    <div class="meteor" style="top: -5%; left: 15%;"></div>
+    <div class="meteor" style="top: -10%; left: 60%;"></div>
+    <div class="meteor" style="top: -15%; left: 80%;"></div>
+
+    <!-- Rocket -->
     <div class="rocket">
-        <img src="/public/images/rocket.webp" alt="Rocket" style="width: 100px;">
+        <img src="/public/images/rocket.webp" alt="Rocket" width="50">
     </div>
-
-    <!-- Retro Orbiting Planet -->
-    <img class="planet retro-planet" src="/public/images/moon.webp" alt="Orbiting Planet">
 </body>
 </html>
